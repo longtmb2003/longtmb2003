@@ -1,8 +1,8 @@
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=260&color=gradient&text=Long%20Tran&fontColor=ffffff&fontSize=52&fontAlignY=38&desc=Backend%20Engineer%20•%20Java%20•%20Spring%20Boot&descAlignY=58"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=260&color=gradient&text=Long%20Tran&fontColor=ffffff&fontSize=52&fontAlignY=38&desc=Backend%20Engineer%20-%20Java%20-%20Spring%20Boot&descAlignY=58"/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=22&duration=3500&pause=2000&center=true&vCenter=true&width=700&lines=Building+reliable+backend+applications.;Always+learning+and+building.;Java+•+Spring+Boot+•+Cloud+Native." />
+<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=22&duration=3500&pause=2000&center=true&vCenter=true&width=700&lines=Building+reliable+backend+applications.;Always+learning+and+building.;Java+-+Spring+Boot+-+Cloud+Native." />
 
 </div>
 
@@ -54,9 +54,7 @@ I'm currently exploring technologies and concepts that help build scalable and m
 # 🛠 Tech Stack
 
 <p align="center">
-
 <img src="https://skillicons.dev/icons?i=java,spring,maven,postgres,mysql,mongodb,redis,docker,kubernetes,nginx,githubactions,nextjs,react,ts,tailwind,git,github,linux"/>
-
 </p>
 
 ---
@@ -79,15 +77,11 @@ I'm currently exploring technologies and concepts that help build scalable and m
 
 <div align="center">
 
-<img
-height="170"
-src="https://github-readme-stats.vercel.app/api?username=longtmb2003&show_icons=true&hide_border=true&rank_icon=github&theme=transparent"/>
+<img height="170" src="https://github-readme-stats.vercel.app/api?username=longtmb2003&show_icons=true&hide_border=true&rank_icon=github&theme=transparent" />
 
 <br/>
 
-<img
-width="100%"
-src="https://github-readme-activity-graph.vercel.app/graph?username=longtmb2003&theme=github-compact&hide_border=true"/>
+<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=longtmb2003&theme=github-compact&hide_border=true" />
 
 </div>
 
@@ -95,10 +89,10 @@ src="https://github-readme-activity-graph.vercel.app/graph?username=longtmb2003&
 
 # 📌 Featured Repositories
 
-- 🎮 [**GoCaro**](https://github.com/longtmb2003/GoCaro) – Online Gomoku game built with Spring Boot and Next.js.
-- 🔐 [**Backend Security**](https://github.com/longtmb2003/backend-security) – Backend authentication and security experiments.
-- ☸️ [**K8s Playground**](https://github.com/longtmb2003/k8s-playground) – Kubernetes learning playground and configurations.
-- 🐪 [**Apache Camel Integrations**](https://github.com/longtmb2003/camel-integration) – Apache Camel integration examples.
+- 🎮 **GoCaro** – Online Gomoku game built with Spring Boot and Next.js.
+- ⚙️ **Quản lý hướng dẫn sử dụng chức năng** – Backend system for user guide management (CRUD, version control).
+- *(Thêm tên repo khác của bạn vào đây)*
+- *(Thêm tên repo khác của bạn vào đây)*
 
 ---
 
