@@ -77,7 +77,7 @@ I'm currently exploring technologies and concepts that help build scalable and m
 
 <div align="center">
 
-[![Long's GitHub stats](https://github-readme-stats.vercel.app/api?username=longtmb2003&show_icons=true&hide_border=true&rank_icon=github)](https://github.com/longtmb2003)
+[![Long's GitHub stats](https://github-readme-stats.vercel.app/api?username=longtmb2003&show_icons=true&theme=transparent&hide_border=true)](https://github.com/longtmb2003)
 
 <br/>
 
