@@ -1,128 +1,125 @@
-# Hi 👋 I'm Long
+<div align="center">
 
-Backend Engineer passionate about building scalable systems, distributed architectures, and modern web applications.
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=260&color=gradient&text=Long%20Tran&fontColor=ffffff&fontSize=52&fontAlignY=38&desc=Backend%20Engineer%20•%20Java%20•%20Spring%20Boot&descAlignY=58"/>
 
-I enjoy solving backend problems, designing clean APIs, and continuously learning cloud-native technologies.
+<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=22&duration=3500&pause=2000&center=true&vCenter=true&width=700&lines=Building+reliable+backend+applications.;Always+learning+and+building.;Java+•+Spring+Boot+•+Cloud+Native."/ />
 
----
-
-## 🚀 Featured Project
-
-### 🎮 GoCaro
-
-A modern online Gomoku (Caro) game built with a full-stack architecture.
-
-🌐 **Live Demo**
-
-https://go-caro-frontend.vercel.app
-
-**Tech Stack**
-
-- Next.js
-- TypeScript
-- Tailwind CSS
-- Spring Boot
-- WebSocket
-- PostgreSQL
-
-**Highlights**
-
-- 🎯 Real-time gameplay
-- ⚡ Responsive interface
-- 🔄 Live deployment on Vercel
-- 📱 Mobile-friendly UI
+</div>
 
 ---
 
-## 💻 Tech Stack
+# 👋 Hi, I'm Long
 
-### Backend
+I'm a backend engineer from Vietnam who enjoys building reliable software, clean APIs and scalable backend systems.
+
+Most of my work revolves around **Java**, **Spring Boot**, and modern backend development. Recently, I've been spending more time learning distributed systems and cloud-native technologies while building personal projects.
+
+---
+
+# 🚀 Featured Project
+
+## 🎮 GoCaro
+
+An online Gomoku (Caro) game built with a modern full-stack architecture.
+
+### Live Demo
+
+👉 https://go-caro-frontend.vercel.app
+
+### Technologies
 
 - Java
 - Spring Boot
-- Spring Security
-- Spring Data JPA
-- REST API
 - WebSocket
-
-### Infrastructure
-
-- Docker
-- Kubernetes
-- Nginx
-- Linux
-
-### Databases
-
-- PostgreSQL
-- MySQL
-- Redis
-
-### Frontend
-
-- React
 - Next.js
 - TypeScript
-- Tailwind CSS
+- PostgreSQL
 
 ---
 
-## 🌱 Currently Learning
+# 🌱 What I'm Exploring
 
-- Distributed Systems
-- Kubernetes
-- Apache Camel
-- Spring Cloud Gateway
-- Event-Driven Architecture
-- System Design
+I'm currently exploring technologies and concepts that help build scalable and maintainable systems.
+
+- ☸️ Kubernetes
+- 🐪 Apache Camel
+- 🌐 Spring Cloud Gateway
+- 📨 Event-Driven Architecture
+- ⚙️ Distributed Systems
+- ☁️ Cloud Native Development
+- 🏗️ System Design
 
 ---
 
-## 📌 What I Like Building
+# 🛠 Tech Stack
 
-- Backend APIs
+<p align="center">
+
+<img src="https://skillicons.dev/icons?i=java,spring,maven,postgres,mysql,redis,docker,kubernetes,nginx,nextjs,react,ts,tailwind,git,github,linux"/>
+
+</p>
+
+---
+
+# 🧠 Engineering Interests
+
+- Backend Engineering
+- RESTful API Design
+- Clean Architecture
 - Microservices
-- Real-time Applications
-- Cloud-native Systems
-- Internal Business Platforms
-- Warehouse Management Systems
+- Distributed Systems
+- Cloud Native
+- Performance Optimization
+- Backend Security
 
 ---
 
-## 📊 GitHub Stats
+# 📈 GitHub Activity
 
-<p align="center">
+<div align="center">
 
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=longtmb2003&show_icons=true&theme=transparent"/>
+<img
+height="170"
+src="https://github-readme-stats.vercel.app/api?username=longtmb2003&show_icons=true&hide_border=true&rank_icon=github&theme=transparent"/>
 
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=longtmb2003&layout=compact&theme=transparent"/>
+<br/>
 
-</p>
+<img
+width="100%"
+src="https://github-readme-activity-graph.vercel.app/graph?username=longtmb2003&theme=github-compact&hide_border=true"/>
 
----
-
-## 📈 Contribution Graph
-
-<p align="center">
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=longtmb2003&theme=github-compact"/>
-
-</p>
+</div>
 
 ---
 
-## 🎯 2026 Goals
+# 📌 Featured Repositories
 
-- Build production-ready backend systems
-- Master Kubernetes & Cloud Native development
-- Deepen knowledge of Distributed Systems
-- Contribute to open-source projects
-- Write cleaner, maintainable software
+- 🎮 **GoCaro** – Online Gomoku game built with Spring Boot and Next.js.
+- 🔐 Backend authentication and security experiments.
+- ☸️ Kubernetes learning playground.
+- 🐪 Apache Camel integration examples.
 
 ---
 
-## 🤝 Connect With Me
+# 🎯 Goals
 
-- GitHub: https://github.com/longtmb2003
+- Build production-ready backend applications.
+- Improve system design and architecture skills.
+- Deepen my understanding of distributed systems.
+- Contribute to open-source projects.
 
-Feel free to explore my repositories or reach out if you'd like to collaborate on backend or full-stack projects.
+---
+
+<div align="center">
+
+### Thanks for stopping by!
+
+Feel free to explore my repositories or connect with me.
+
+<a href="https://github.com/longtmb2003">
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github"/>
+</a>
+
+<img width="100%" src="https://capsule-render.vercel.app/api?section=footer&type=waving&color=gradient"/>
+
+</div>
