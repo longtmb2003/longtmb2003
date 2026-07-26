@@ -67,47 +67,69 @@ as a guest, climb a ranked ELO ladder, and reconnect mid-game without losing.
 **Stack** — Backend: `Go 1.26` · `Gin` · `gorilla/websocket` · `pgx/PostgreSQL` · `JWT` ·
 Frontend: `Vue 3` · `TypeScript` · `Pinia` · `TailwindCSS` · `Vite`
 
-### 🏗️ Architecture
+### 🏛️ Architecture
 
 ```mermaid
-flowchart TD
-    subgraph FE["Frontend — Vue 3 SPA"]
-        UI["Pages · Stores · Socket layer"]
+flowchart LR
+    %% Definitions
+    classDef frontend fill:#3b82f6,color:#fff,stroke:#1d4ed8,stroke-width:2px,border-radius:8px
+    classDef transport fill:#f59e0b,color:#fff,stroke:#b45309,stroke-width:2px,border-radius:8px
+    classDef application fill:#10b981,color:#fff,stroke:#047857,stroke-width:2px,border-radius:8px
+    classDef domain fill:#8b5cf6,color:#fff,stroke:#6d28d9,stroke-width:2px,border-radius:8px
+    classDef database fill:#64748b,color:#fff,stroke:#475569,stroke-width:2px,border-radius:8px
+
+    subgraph FE["📱 Frontend — Vue 3 SPA"]
+        direction TB
+        UI["Pages · Stores · Socket Layer"]:::frontend
     end
 
-    subgraph TL["Transport Layer"]
-        REST["Gin REST Handlers"]
-        WS["WebSocket Gateway<br/>matchmake · ranked · reconnect · spectate · lobby"]
+    subgraph Backend ["⚙️ Go Backend (Clean Architecture)"]
+        direction LR
+        
+        subgraph TL["🌐 Transport Layer"]
+            direction TB
+            REST["REST Handlers"]:::transport
+            WS["WebSocket Gateway<br/><small>Matchmake · Ranked · Reconnect</small>"]:::transport
+        end
+
+        subgraph AL["🏗️ Application Layer"]
+            direction TB
+            SVC["Auth & Stats Services"]:::application
+            MM["Matchmaker<br/><small>FIFO + Ranked ELO (K=32)</small>"]:::application
+            RM["Room Manager"]:::application
+            SUB["Event Subscribers<br/><small>Match Recorder</small>"]:::application
+        end
+
+        subgraph DL["🧠 Domain Layer (Isolated)"]
+            direction TB
+            ROOM["Room Actor<br/><small>1 Goroutine/Match</small>"]:::domain
+            CORE["MatchCore<br/><small>Rules · Turns</small>"]:::domain
+            BUS["Event Bus"]:::domain
+        end
+        
+        %% Internal Backend Flow
+        REST --> SVC
+        WS --> MM
+        MM --> RM
+        RM --> ROOM
+        
+        ROOM --> CORE
+        ROOM -->|Domain Events| BUS
+        BUS --> SUB
+        BUS -.->|Protocol Frames| WS
     end
 
-    subgraph AL["Application Layer"]
-        MM["Matchmaker<br/>casual FIFO + ranked ELO"]
-        RM["RoomManager"]
-        SVC["Services<br/>auth · match · stats"]
-        SUB["Event Subscribers<br/>match recorder"]
-    end
+    DB[("🗄️ PostgreSQL")]:::database
 
-    subgraph DL["Domain Layer — never imports infra"]
-        ROOM["Room Actor<br/>one goroutine per match · owns timers"]
-        CORE["MatchCore<br/>rules · turns · win detection"]
-        BUS["Event Bus"]
-    end
-
-    DB[("PostgreSQL")]
-
-    UI -->|REST| REST
-    UI <-->|WebSocket| WS
-    REST --> SVC
-    WS --> MM --> RM --> ROOM
-    ROOM --> CORE
-    ROOM -->|Domain Events| BUS
-    BUS --> SUB
-    BUS -->|protocol frames| WS
+    %% External Flow
+    UI -->|HTTPS| REST
+    UI <-->|WSS| WS
+    
     SVC --> DB
-    SUB --> DB
+    SUB -->|Save History| DB
 ```
 
-> **Flow:** a WebSocket frame enters the gateway → the matchmaker pairs players into a **Room actor** → the room applies the move through **MatchCore** and emits **domain events** → the event bus fans them out to persistence and to the protocol mappers that push frames back to clients. The domain layer knows nothing about JSON or sockets.
+> **Flow:** A WebSocket frame enters the gateway ➡️ the Matchmaker pairs players into a **Room Actor** ➡️ the room applies the move through **MatchCore** and emits **domain events** ➡️ the event bus fans them out to persistence and to the protocol mappers that push frames back to clients. The domain layer knows nothing about JSON or sockets.
 
 ### ⚙️ Backend — engineered for concurrency, not just endpoints
 - ⚡ **Real-time gameplay over WebSocket** — low-latency move sync on a 15×15 board
