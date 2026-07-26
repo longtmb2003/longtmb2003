@@ -56,42 +56,33 @@ My core stack is **Java · Spring Boot · Kafka · gRPC**, and I learn best by b
 ---
 
 # 🚀 Featured Project — GoCaro
+## 🎮 GoCaro — Real-time Multiplayer Gomoku (Caro)
 
-> **Real-time multiplayer Gomoku (Caro) backend** — an end-to-end system for live matches, not just a CRUD app.
+An end-to-end system for **live online matches** — not a CRUD demo. Play instantly
+as a guest, climb a ranked ELO ladder, and reconnect mid-game without losing.
 
-**🔗 Live Demo:** https://go-caro-frontend.vercel.app
+🔗 **Live demo:** https://go-caro-frontend.vercel.app
+📦 [Backend (Go)](https://github.com/longtmb2003/GoCaro-Backend) · [Frontend (Vue)](https://github.com/longtmb2003/GoCaro-Frontend)
 
-**What it does under the hood:**
+**Stack** — Backend: `Go 1.26` · `Gin` · `gorilla/websocket` · `pgx/PostgreSQL` · `JWT` ·
+Frontend: `Vue 3` · `TypeScript` · `Pinia` · `TailwindCSS` · `Vite`
 
-- ⚡ **Real-time gameplay** over WebSocket (low-latency move sync)
-- 🎯 **Matchmaking** — pairs players into live rooms
-- 🧩 **Actor-style rooms** — one goroutine per room owns its state & lifecycle
-- 🔄 **Event-driven room lifecycle** — create → join → play → finish
-- 🏛️ **Clean Architecture** — clear separation of domain / application / infra
-- 🔐 **JWT authentication**
-- 🗄️ **PostgreSQL** persistence
+### ⚙️ Backend — engineered for concurrency, not just endpoints
+- ⚡ **Real-time gameplay over WebSocket** — low-latency move sync on a 15×15 board
+- 🧩 **Actor-style rooms** — one goroutine per match owns its state, timers & lifecycle; no mutexes on game state
+- 🔄 **Event-driven architecture** — commands in, domain events out over an internal event bus (persistence is just a subscriber)
+- 🏛️ **Clean Architecture** — domain / application / transport strictly separated; the domain never imports networking
+- 🎯 **Dual matchmaking** — casual FIFO queue, plus **ranked ELO** (K=32) with a rating band that widens the longer you wait
+- 🔁 **Reconnect with a grace window** — a dropped player rejoins their live match and resyncs the board
+- 👀 **Spectator mode** · 🎞️ **Replay** · ⏱️ **Turn clock** · 🤝 **Draw offers**
+- 🔐 JWT auth · 🗄️ PostgreSQL persistence · ✅ **230 tests** (unit + e2e, race-checked in CI)
 
-### Architecture
-
-```mermaid
-flowchart LR
-    C["🌐 Vue Client"]
-    subgraph BE["Go Backend"]
-        WS["WebSocket Gateway"]
-        MM["Matchmaking Service"]
-        RA["Room Goroutines<br/>(actor-style, per-game state)"]
-        EV["Event-driven<br/>room lifecycle"]
-    end
-    DB[("PostgreSQL")]
-
-    C -- "REST / JWT" --> BE
-    C <-- "WebSocket" --> WS
-    WS --> MM --> RA
-    RA --> EV
-    RA --> DB
-```
-
-**Tech:** `Go` · `WebSocket` · `Vue` · `PostgreSQL`
+### 🖥️ Frontend — a full game client, not a shell
+- 🚀 **Anonymous "Play Now"** — start a match in one click, **save your account later** without losing rating or history
+- 🏆 **Player progression** — ELO rank tiers, win streaks, coins, daily missions & achievement sharing
+- 📊 **Live lobby** — online-user presence, leaderboard preview & username search, match history
+- ♻️ **Resilient in-match UX** — auto-reconnect overlay, opponent-away countdown, live turn timer
+- ♿ Accessible, responsive, light/dark — built as Page → Component → Composable → Store → Socket layers
 
 ---
 
