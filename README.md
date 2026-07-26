@@ -65,7 +65,7 @@ My core stack is **Java · Spring Boot · Kafka · gRPC**, and I learn best by b
 
 - ⚡ **Real-time gameplay** over WebSocket (low-latency move sync)
 - 🎯 **Matchmaking** — pairs players into live rooms
-- 🧩 **Room Actor model** — each game room owns its own state & lifecycle
+- 🧩 **Actor-style rooms** — one goroutine per room owns its state & lifecycle
 - 🔄 **Event-driven room lifecycle** — create → join → play → finish
 - 🏛️ **Clean Architecture** — clear separation of domain / application / infra
 - 🔐 **JWT authentication**
@@ -75,11 +75,11 @@ My core stack is **Java · Spring Boot · Kafka · gRPC**, and I learn best by b
 
 ```mermaid
 flowchart LR
-    C["🌐 Next.js Client<br/>(TypeScript)"]
-    subgraph BE["Spring Boot Backend"]
+    C["🌐 Vue Client"]
+    subgraph BE["Go Backend"]
         WS["WebSocket Gateway"]
         MM["Matchmaking Service"]
-        RA["Room Actors<br/>(per-game state)"]
+        RA["Room Goroutines<br/>(actor-style, per-game state)"]
         EV["Event-driven<br/>room lifecycle"]
     end
     DB[("PostgreSQL")]
@@ -91,14 +91,14 @@ flowchart LR
     RA --> DB
 ```
 
-**Tech:** `Java` · `Spring Boot` · `WebSocket` · `Next.js` · `TypeScript` · `PostgreSQL`
+**Tech:** `Go` · `WebSocket` · `Vue` · `PostgreSQL`
 
 ---
 
 # 🛠 Tech Stack
 
 <p align="center">
-<img src="https://skillicons.dev/icons?i=java,spring,maven,kafka,grpc,postgres,mysql,mongodb,redis,docker,kubernetes,nginx,githubactions,nextjs,react,ts,tailwind,git,github,linux"/>
+<img src="https://skillicons.dev/icons?i=java,spring,go,kafka,grpc,maven,postgres,mysql,mongodb,redis,docker,kubernetes,nginx,githubactions,react,nextjs,vue,ts,tailwind,git,github,linux"/>
 </p>
 
 ---
@@ -122,15 +122,6 @@ flowchart LR
 # 📈 GitHub Activity
 
 <div align="center">
-
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=longtmb2003&show_icons=true&theme=transparent&hide_border=true&count_private=true&include_all_commits=true" />
-<img height="165" src="https://streak-stats.demolab.com/?user=longtmb2003&theme=transparent&hide_border=true" />
-
-<br/>
-
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=longtmb2003&layout=compact&theme=transparent&hide_border=true&langs_count=8" />
-
-<br/><br/>
 
 <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=longtmb2003&theme=github-compact&hide_border=true" />
 
