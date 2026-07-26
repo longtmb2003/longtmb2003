@@ -67,6 +67,48 @@ as a guest, climb a ranked ELO ladder, and reconnect mid-game without losing.
 **Stack** — Backend: `Go 1.26` · `Gin` · `gorilla/websocket` · `pgx/PostgreSQL` · `JWT` ·
 Frontend: `Vue 3` · `TypeScript` · `Pinia` · `TailwindCSS` · `Vite`
 
+### 🏗️ Architecture
+
+```mermaid
+flowchart TD
+    subgraph FE["Frontend — Vue 3 SPA"]
+        UI["Pages · Stores · Socket layer"]
+    end
+
+    subgraph TL["Transport Layer"]
+        REST["Gin REST Handlers"]
+        WS["WebSocket Gateway<br/>matchmake · ranked · reconnect · spectate · lobby"]
+    end
+
+    subgraph AL["Application Layer"]
+        MM["Matchmaker<br/>casual FIFO + ranked ELO"]
+        RM["RoomManager"]
+        SVC["Services<br/>auth · match · stats"]
+        SUB["Event Subscribers<br/>match recorder"]
+    end
+
+    subgraph DL["Domain Layer — never imports infra"]
+        ROOM["Room Actor<br/>one goroutine per match · owns timers"]
+        CORE["MatchCore<br/>rules · turns · win detection"]
+        BUS["Event Bus"]
+    end
+
+    DB[("PostgreSQL")]
+
+    UI -->|REST| REST
+    UI <-->|WebSocket| WS
+    REST --> SVC
+    WS --> MM --> RM --> ROOM
+    ROOM --> CORE
+    ROOM -->|Domain Events| BUS
+    BUS --> SUB
+    BUS -->|protocol frames| WS
+    SVC --> DB
+    SUB --> DB
+```
+
+> **Flow:** a WebSocket frame enters the gateway → the matchmaker pairs players into a **Room actor** → the room applies the move through **MatchCore** and emits **domain events** → the event bus fans them out to persistence and to the protocol mappers that push frames back to clients. The domain layer knows nothing about JSON or sockets.
+
 ### ⚙️ Backend — engineered for concurrency, not just endpoints
 - ⚡ **Real-time gameplay over WebSocket** — low-latency move sync on a 15×15 board
 - 🧩 **Actor-style rooms** — one goroutine per match owns its state, timers & lifecycle; no mutexes on game state
