@@ -1,19 +1,19 @@
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=260&color=gradient&text=Long%20Tran&fontColor=ffffff&fontSize=52&fontAlignY=38&desc=Distributed%20%26%20Real-time%20Backend%20Engineer&descAlignY=58"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=260&color=gradient&text=Long%20Tran&fontColor=ffffff&fontSize=52&fontAlignY=38&desc=Backend%20Engineer%20%7C%20Real-time%20%26%20Distributed%20Systems&descAlignY=58" alt="Long Tran — Backend Engineer" />
 
-<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=22&duration=3500&pause=2000&center=true&vCenter=true&width=760&lines=Building+distributed+backend+systems.;Designing+scalable%2C+real-time+APIs.;Java+-+Spring+Boot+-+Kafka+-+gRPC;Learning+by+building." />
+<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=22&duration=3500&pause=1800&center=true&vCenter=true&width=820&lines=Building+reliable+real-time+systems.;Designing+event-driven+backend+architectures.;Go+%C2%B7+Java+%C2%B7+Spring+Boot+%C2%B7+WebSockets+%C2%B7+Redis;Learning+by+shipping+production-minded+software." alt="Typing introduction" />
 
-<br/>
+<br />
 
 <a href="https://longtmb2003.github.io">
-  <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
 </a>
 <a href="https://www.linkedin.com/in/long-tmb/">
-  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
 </a>
 <a href="https://github.com/longtmb2003">
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github"/>
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub" />
 </a>
 
 </div>
@@ -22,11 +22,11 @@
 
 # 👋 Hi, I'm Long
 
-**Backend engineer** based in **Ho Chi Minh City, Vietnam**, focused on **distributed systems**, **real-time services**, and **event-driven architecture**.
+I'm a **backend engineer** based in **Ho Chi Minh City, Vietnam**, focused on **distributed systems**, **real-time services**, and **event-driven architecture**.
 
-I enjoy solving backend problems where **reliability, performance, and architecture** matter more than fancy UI — designing clean APIs, modeling concurrent systems, and making services that stay correct under load.
+I enjoy problems where correctness under concurrency, reliability, and system boundaries matter: designing clean APIs, isolating domain logic, coordinating live state, and operating services under production-like conditions.
 
-My core stack is **Java · Spring Boot · Kafka · gRPC**, and I learn best by building things that run under production-like conditions.
+My backend toolkit spans **Java / Spring Boot** and **Go**, with hands-on work across WebSockets, Kafka, gRPC, PostgreSQL, Redis, Docker, and CI/CD.
 
 ---
 
@@ -34,20 +34,22 @@ My core stack is **Java · Spring Boot · Kafka · gRPC**, and I learn best by b
 
 <table>
 <tr>
-<td>
+<td valign="top" width="50%">
 
 **Building**
-- Real-time WebSocket services
-- Event-driven backends with Kafka
-- gRPC service-to-service communication
+
+- GoCaro, a production-minded real-time game platform
+- Actor-style WebSocket services and event-driven workflows
+- Social, tournament, progression, and virtual-economy systems
 
 </td>
-<td>
+<td valign="top" width="50%">
 
 **Going deeper on**
-- Distributed systems & system design
+
+- Distributed systems and failure recovery
 - Clean / Hexagonal Architecture
-- Cloud native (Docker · Kubernetes · CI/CD)
+- Observability, abuse prevention, and cloud-native delivery
 
 </td>
 </tr>
@@ -56,121 +58,109 @@ My core stack is **Java · Spring Boot · Kafka · gRPC**, and I learn best by b
 ---
 
 # 🚀 Featured Project — GoCaro
-## 🎮 GoCaro — Real-time Multiplayer Gomoku (Caro)
 
-An end-to-end system for **live online matches** — not a CRUD demo. Play instantly
-as a guest, climb a ranked ELO ladder, and reconnect mid-game without losing.
+## 🎮 Real-time Multiplayer Gomoku Platform
 
-🔗 **Live demo:** https://go-caro-frontend.vercel.app
-📦 [Backend (Go)](https://github.com/longtmb2003/GoCaro-Backend) · [Frontend (Vue)](https://github.com/longtmb2003/GoCaro-Frontend)
+GoCaro has grown from a two-player WebSocket demo into a full multiplayer platform. Players can enter anonymously, upgrade their account without losing progress, compete in casual or ranked matches, reconnect after a dropped connection, join tournaments, challenge friends, chat, and build a spirit collection.
 
-**Stack** — Backend: `Go 1.26` · `Gin` · `gorilla/websocket` · `pgx/PostgreSQL` · `JWT` ·
-Frontend: `Vue 3` · `TypeScript` · `Pinia` · `TailwindCSS` · `Vite`
+🌐 **Live:** [gocaro.cyou](https://gocaro.cyou)<br />
+📦 **Source:** [Go backend](https://github.com/longtmb2003/GoCaro-Backend) · [Vue frontend](https://github.com/longtmb2003/GoCaro-Frontend)
 
-### 🏛️ Architecture
+**Backend:** `Go 1.26` · `Gin` · `gorilla/websocket` · `PostgreSQL / pgx` · `Redis` · `JWT` · `Prometheus`<br />
+**Frontend:** `Vue 3` · `TypeScript` · `Pinia` · `Tailwind CSS 4` · `Vite 8`
+
+### 🏛️ System Architecture
 
 ```mermaid
 flowchart LR
-    %% Definitions
-    classDef frontend fill:#3b82f6,color:#fff,stroke:#1d4ed8,stroke-width:2px,border-radius:8px
-    classDef transport fill:#f59e0b,color:#fff,stroke:#b45309,stroke-width:2px,border-radius:8px
-    classDef application fill:#10b981,color:#fff,stroke:#047857,stroke-width:2px,border-radius:8px
-    classDef domain fill:#8b5cf6,color:#fff,stroke:#6d28d9,stroke-width:2px,border-radius:8px
-    classDef database fill:#64748b,color:#fff,stroke:#475569,stroke-width:2px,border-radius:8px
+    PLAYER["Web / Mobile Browser"]
+    EDGE["Cloudflare Tunnel<br/>Caddy Reverse Proxy"]
 
-    subgraph FE["📱 Frontend — Vue 3 SPA"]
-        direction TB
-        UI["Pages · Stores · Socket Layer"]:::frontend
+    subgraph CLIENT["Vue 3 SPA"]
+        UI["Pages · Components"]
+        STATE["Pinia Stores · Composables"]
+        SOCKET["REST + WebSocket Clients"]
+        UI --> STATE --> SOCKET
     end
 
-    subgraph Backend ["⚙️ Go Backend (Clean Architecture)"]
-        direction LR
-        
-        subgraph TL["🌐 Transport Layer"]
-            direction TB
-            REST["REST Handlers"]:::transport
-            WS["WebSocket Gateway<br/><small>Matchmake · Ranked · Reconnect</small>"]:::transport
-        end
+    subgraph API["Go Backend"]
+        TRANSPORT["REST Handlers<br/>WebSocket Gateways"]
+        SERVICES["Application Services<br/>Auth · Social · Economy · Tournament"]
+        MATCHMAKER["Casual / Ranked Matchmaker<br/>Ready Check · Reservations"]
+        ROOMS["Room Manager<br/>One Actor per Match"]
+        CORE["MatchCore<br/>Rules · Turns · Win Detection"]
+        EVENTS["Domain Event Bus"]
 
-        subgraph AL["🏗️ Application Layer"]
-            direction TB
-            SVC["Auth & Stats Services"]:::application
-            MM["Matchmaker<br/><small>FIFO + Ranked ELO (K=32)</small>"]:::application
-            RM["Room Manager"]:::application
-            SUB["Event Subscribers<br/><small>Match Recorder</small>"]:::application
-        end
-
-        subgraph DL["🧠 Domain Layer (Isolated)"]
-            direction TB
-            ROOM["Room Actor<br/><small>1 Goroutine/Match</small>"]:::domain
-            CORE["MatchCore<br/><small>Rules · Turns</small>"]:::domain
-            BUS["Event Bus"]:::domain
-        end
-        
-        %% Internal Backend Flow
-        REST --> SVC
-        WS --> MM
-        MM --> RM
-        RM --> ROOM
-        
-        ROOM --> CORE
-        ROOM -->|Domain Events| BUS
-        BUS --> SUB
-        BUS -.->|Protocol Frames| WS
+        TRANSPORT --> SERVICES
+        TRANSPORT --> MATCHMAKER
+        MATCHMAKER --> ROOMS --> CORE
+        ROOMS --> EVENTS --> SERVICES
     end
 
-    DB[("🗄️ PostgreSQL")]:::database
+    POSTGRES[("PostgreSQL<br/>Durable State")]
+    REDIS[("Redis<br/>Presence · Pub/Sub · Job Locks")]
+    METRICS["Prometheus Metrics"]
 
-    %% External Flow
-    UI -->|HTTPS| REST
-    UI <-->|WSS| WS
-    
-    SVC --> DB
-    SUB -->|Save History| DB
+    PLAYER --> EDGE --> CLIENT
+    SOCKET -->|HTTPS / WSS| TRANSPORT
+    SERVICES --> POSTGRES
+    SERVICES --> REDIS
+    MATCHMAKER --> REDIS
+    API --> METRICS
 ```
 
-> **Flow:** A WebSocket frame enters the gateway ➡️ the Matchmaker pairs players into a **Room Actor** ➡️ the room applies the move through **MatchCore** and emits **domain events** ➡️ the event bus fans them out to persistence and to the protocol mappers that push frames back to clients. The domain layer knows nothing about JSON or sockets.
+The core match state is owned by a **single room goroutine**. Commands enter through channels, the isolated `MatchCore` applies game rules, and immutable domain events fan out to persistence and realtime protocol adapters. This keeps the domain independent from HTTP, WebSocket, and database concerns while avoiding shared-state races inside a match.
 
-### ⚙️ Backend — engineered for concurrency, not just endpoints
-- ⚡ **Real-time gameplay over WebSocket** — low-latency move sync on a 15×15 board
-- 🧩 **Actor-style rooms** — one goroutine per match owns its state, timers & lifecycle; no mutexes on game state
-- 🔄 **Event-driven architecture** — commands in, domain events out over an internal event bus (persistence is just a subscriber)
-- 🏛️ **Clean Architecture** — domain / application / transport strictly separated; the domain never imports networking
-- 🎯 **Dual matchmaking** — casual FIFO queue, plus **ranked ELO** (K=32) with a rating band that widens the longer you wait
-- 🔁 **Reconnect with a grace window** — a dropped player rejoins their live match and resyncs the board
-- 👀 **Spectator mode** · 🎞️ **Replay** · ⏱️ **Turn clock** · 🤝 **Draw offers**
-- 🔐 JWT auth · 🗄️ PostgreSQL persistence · ✅ **230 tests** (unit + e2e, race-checked in CI)
+### ⚡ Realtime & Competitive Play
 
-### 🖥️ Frontend — a full game client, not a shell
-- 🚀 **Anonymous "Play Now"** — start a match in one click, **save your account later** without losing rating or history
-- 🏆 **Player progression** — ELO rank tiers, win streaks, coins, daily missions & achievement sharing
-- 📊 **Live lobby** — online-user presence, leaderboard preview & username search, match history
-- ♻️ **Resilient in-match UX** — auto-reconnect overlay, opponent-away countdown, live turn timer
-- ♿ Accessible, responsive, light/dark — built as Page → Component → Composable → Store → Socket layers
+- Casual FIFO and ranked Elo matchmaking with a widening rating band
+- Match ready checks, abandonment penalties, turn clocks, draw offers, and resignations
+- Reconnect and full state resync after transient disconnects
+- Spectator mode, match history, replay, and shareable results
+- Private friend challenges and open invite-code matches
+- Single-elimination tournaments with brackets, round progression, walkovers, and recovery jobs
+
+### 🤝 Social & Progression
+
+- Anonymous play with an in-place upgrade to a permanent account
+- Redis-backed presence, live lobby events, friends, user search, and activity feeds
+- Lobby chat, direct messages, unread state, and retention cleanup
+- Coins, daily quests, achievements, rank tiers, streaks, and leaderboards
+- Shop, inventory, equipment, spirit collection, and spirit evolution
+
+### 🛡️ Production Engineering
+
+- PostgreSQL migrations and transactional persistence for matches, ratings, rewards, and tournament state
+- Redis pub/sub, distributed background-job locks, and multi-instance-aware presence
+- Per-IP and per-user rate limits plus optional Cloudflare Turnstile protection
+- Liveness/readiness probes, structured logging, Prometheus metrics, and graceful shutdown
+- Dockerized deployment behind Caddy and Cloudflare Tunnel
+- **400+ Go test functions** across unit, repository, handler, concurrency, and end-to-end suites; CI also runs race detection
 
 ---
 
 # 🛠 Tech Stack
 
 <p align="center">
-<img src="https://skillicons.dev/icons?i=java,spring,go,kafka,grpc,maven,postgres,mysql,mongodb,redis,docker,kubernetes,nginx,githubactions,react,nextjs,vue,ts,tailwind,git,github,linux"/>
+  <img src="https://skillicons.dev/icons?i=java,spring,go,kafka,grpc,maven,postgres,mysql,mongodb,redis,docker,kubernetes,nginx,cloudflare,githubactions,react,nextjs,vue,ts,tailwind,vite,git,github,linux" alt="Technology stack" />
 </p>
 
 ---
 
-# 🧱 Things I Build
+# 🧱 What I Build
 
-- ✅ High-throughput **REST & gRPC APIs**
-- ✅ **Real-time WebSocket** services
-- ✅ **Event-driven** backends with Kafka
-- ✅ **Dockerized** deployments with CI/CD
-- ✅ Clean, testable, well-architected services
+- Reliable REST, gRPC, and WebSocket services
+- Concurrent systems with explicit state ownership and lifecycle management
+- Event-driven backends and asynchronous workflows
+- Data-intensive features backed by PostgreSQL and Redis
+- Observable, containerized deployments with CI/CD
+- Clean, testable systems with pragmatic architecture boundaries
 
 ---
 
 # 🧠 Focus Areas
 
-`Distributed Systems` · `Real-time Backend` · `Event-Driven Architecture` · `Clean Architecture` · `Cloud Native` · `Scalable APIs`
+`Distributed Systems` · `Real-time Backend` · `Event-Driven Architecture` · `Concurrency` · `Clean Architecture` · `Observability` · `Cloud Native`
 
 ---
 
@@ -178,7 +168,7 @@ flowchart LR
 
 <div align="center">
 
-<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=longtmb2003&theme=github-compact&hide_border=true" />
+<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=longtmb2003&theme=github-compact&hide_border=true" alt="Long's GitHub activity graph" />
 
 </div>
 
@@ -186,18 +176,18 @@ flowchart LR
 
 <div align="center">
 
-### Thanks for stopping by! Let's connect.
+### Thanks for stopping by — let's connect.
 
 <a href="https://longtmb2003.github.io">
-  <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
 </a>
 <a href="https://www.linkedin.com/in/long-tmb/">
-  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
 </a>
 <a href="https://github.com/longtmb2003">
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github"/>
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub" />
 </a>
 
-<img width="100%" src="https://capsule-render.vercel.app/api?section=footer&type=waving&color=gradient"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?section=footer&type=waving&color=gradient" alt="Footer" />
 
 </div>
