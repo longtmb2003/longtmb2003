@@ -1,5 +1,7 @@
 <div align="center">
 
+<img width="100%" src="./assets/profile-hero.jpg" alt="Distributed real-time systems connected to a Gomoku board" />
+
 <h1>Long Tran</h1>
 <h3>Backend Engineer · Real-time Systems · Distributed Architecture</h3>
 
@@ -22,6 +24,14 @@ recover from failure, and remain understandable as they grow.
   <img src="https://img.shields.io/badge/Redis-Coordination-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis" />
 </p>
 
+<p>
+  <a href="#-about-me">About</a> ·
+  <a href="#-featured-project-gocaro">GoCaro</a> ·
+  <a href="#-highlighted-system-flows">System Flows</a> ·
+  <a href="#-engineering-highlights">Highlights</a> ·
+  <a href="#-technology-stack">Stack</a>
+</p>
+
 </div>
 
 ---
@@ -39,10 +49,17 @@ My toolkit spans **Java / Spring Boot** and **Go**, with hands-on work across We
 <div align="center">
 
 <a href="https://gocaro.cyou">
-  <img width="100%" src="https://gocaro.cyou/thumbnail-og.jpg" alt="GoCaro — Real-time Multiplayer Gomoku" />
+  <img width="520" src="./assets/gocaro-cover.webp" alt="GoCaro — Real-time Multiplayer Gomoku" />
 </a>
 
 ### A production-minded real-time multiplayer Gomoku platform
+
+<p>
+  <img src="https://img.shields.io/badge/REAL--TIME-WebSocket-0891B2?style=flat-square" alt="Realtime WebSocket" />
+  <img src="https://img.shields.io/badge/CONCURRENCY-Actor_Model-7C3AED?style=flat-square" alt="Actor model" />
+  <img src="https://img.shields.io/badge/TESTS-400%2B-16A34A?style=flat-square" alt="More than 400 Go test functions" />
+  <img src="https://img.shields.io/badge/MIGRATIONS-27-EA580C?style=flat-square" alt="27 PostgreSQL migrations" />
+</p>
 
 <p>
   <a href="https://gocaro.cyou"><img src="https://img.shields.io/badge/PLAY_LIVE-gocaro.cyou-14B8A6?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Play GoCaro" /></a>
@@ -54,6 +71,9 @@ My toolkit spans **Java / Spring Boot** and **Go**, with hands-on work across We
 
 GoCaro started as a two-player WebSocket demo and evolved into a complete multiplayer platform: instant guest play, ranked matchmaking, reconnect, spectators, tournaments, social features, chat, rewards, and collectible spirits—all backed by explicit concurrency and persistence rules.
 
+> [!IMPORTANT]
+> GoCaro is built around live state, failure recovery, and event-driven workflows—not a CRUD application with a game board attached.
+
 | Realtime Core | Competition | Social Layer | Progression |
 | --- | --- | --- | --- |
 | Actor-owned matches | Casual + ranked queues | Redis presence | Elo ranks + streaks |
@@ -63,7 +83,7 @@ GoCaro started as a two-player WebSocket demo and evolved into a complete multip
 **Backend:** `Go 1.26` · `Gin` · `gorilla/websocket` · `PostgreSQL / pgx` · `Redis` · `JWT` · `Prometheus`<br />
 **Frontend:** `Vue 3` · `TypeScript` · `Pinia` · `Tailwind CSS 4` · `Vite 8`
 
-### Architecture at a Glance
+### 🧭 Architecture at a Glance
 
 ```mermaid
 flowchart LR
@@ -86,20 +106,34 @@ flowchart LR
     SVC --> REDIS[("Redis")]
     MM --> REDIS
     BACKEND --> OBS["Logs · Health · Prometheus"]
+
+    classDef edge fill:#0f172a,color:#f8fafc,stroke:#38bdf8,stroke-width:2px
+    classDef transport fill:#164e63,color:#ecfeff,stroke:#22d3ee,stroke-width:2px
+    classDef domain fill:#4c1d95,color:#faf5ff,stroke:#a78bfa,stroke-width:2px
+    classDef data fill:#0f766e,color:#f0fdfa,stroke:#2dd4bf,stroke-width:2px
+    classDef ops fill:#7c2d12,color:#fff7ed,stroke:#fb923c,stroke-width:2px
+
+    class USER,EDGE,SPA edge
+    class HTTP,WS,MM,RM transport
+    class ROOM,CORE,BUS,SVC domain
+    class PG,REDIS data
+    class OBS ops
 ```
 
-The important boundary is the **Room Actor**: one goroutine exclusively owns board state, clocks, disconnect state, and match lifecycle. Other components send commands through channels; they never mutate a live match directly.
+> [!NOTE]
+> The **Room Actor** is the key boundary: one goroutine exclusively owns board state, clocks, disconnect state, and match lifecycle. Other components send commands through channels; they never mutate a live match directly.
 
 ---
 
 ## 🔀 Highlighted System Flows
 
-### 1. Play Instantly, Keep the Same Identity
+### 01 · Play Instantly, Keep the Same Identity
 
 Anonymous play is a first-class account state, not a disposable frontend session. Upgrading changes credentials on the same user record, so Elo, history, coins, quests, and inventory survive.
 
 ```mermaid
 sequenceDiagram
+    autonumber
     actor Player
     participant SPA as Vue SPA
     participant Auth as Auth Service
@@ -116,10 +150,11 @@ sequenceDiagram
     Player->>SPA: Save My Account
     SPA->>Auth: POST /api/auth/upgrade
     Auth->>DB: Add username + password to same user ID
+    Note over Auth,DB: Identity stays stable while only account credentials change
     Auth-->>SPA: New JWT, all progress preserved
 ```
 
-### 2. Match Lifecycle, Reconnect, and Durable Results
+### 02 · Match Lifecycle, Reconnect, and Durable Results
 
 The live path separates commands, domain rules, event delivery, and persistence. A transient network failure enters a grace window; a returning player receives a complete state snapshot before continuing.
 
@@ -140,9 +175,19 @@ flowchart LR
     RESYNC --> ROOM
     GRACE -->|Window expires| FORFEIT["Disconnect loss"]
     ROOM -.-> SPECTATE["Spectator stream"]
+
+    classDef entry fill:#164e63,color:#ecfeff,stroke:#22d3ee,stroke-width:2px
+    classDef live fill:#4c1d95,color:#faf5ff,stroke:#a78bfa,stroke-width:2px
+    classDef success fill:#0f766e,color:#f0fdfa,stroke:#2dd4bf,stroke-width:2px
+    classDef warning fill:#7c2d12,color:#fff7ed,stroke:#fb923c,stroke-width:2px
+
+    class QUEUE,READY,MATCH entry
+    class ROOM,CORE,EVENTS,LIVE,SPECTATE live
+    class SAVE,HISTORY,RESYNC success
+    class PENALTY,GRACE,FORFEIT warning
 ```
 
-### 3. Tournament Bracket from Registration to Champion
+### 03 · Tournament Bracket from Registration to Champion
 
 Tournament matches reuse the real matchmaker and room engine. The bracket persists independently from live reservations, so recovery can reissue work after a restart or reconcile a dropped event.
 
@@ -168,9 +213,19 @@ flowchart TD
 
     RECOVERY["Restart recovery + periodic reconciler"] -.-> RESERVE
     RECOVERY -.-> ADVANCE
+
+    classDef setup fill:#164e63,color:#ecfeff,stroke:#22d3ee,stroke-width:2px
+    classDef active fill:#4c1d95,color:#faf5ff,stroke:#a78bfa,stroke-width:2px
+    classDef decision fill:#7c2d12,color:#fff7ed,stroke:#fb923c,stroke-width:2px
+    classDef done fill:#0f766e,color:#f0fdfa,stroke:#2dd4bf,stroke-width:2px
+
+    class CREATE,REGISTER,SEAL,START,RESERVE setup
+    class PLAY,REMATCH,RECOVERY active
+    class FULL,ARRIVE,RESULT,ROUND,WALKOVER decision
+    class ADVANCE,CHAMPION done
 ```
 
-### 4. One Match Event Powers the Progression Loop
+### 04 · One Match Event Powers the Progression Loop
 
 Match completion is published once. Ordered subscribers ensure stats are updated before rewards are calculated; other subscribers handle achievements, spectators, and tournament progression without adding those concerns to gameplay code.
 
@@ -192,6 +247,16 @@ flowchart LR
     COLLECTION --> SPIRIT["Equip / evolve spirit"]
     SHOP --> SPIRIT
     SPIRIT --> NEXT["Visible in the next match"]
+
+    classDef event fill:#4c1d95,color:#faf5ff,stroke:#a78bfa,stroke-width:2px
+    classDef service fill:#164e63,color:#ecfeff,stroke:#22d3ee,stroke-width:2px
+    classDef reward fill:#0f766e,color:#f0fdfa,stroke:#2dd4bf,stroke-width:2px
+    classDef outcome fill:#7c2d12,color:#fff7ed,stroke:#fb923c,stroke-width:2px
+
+    class FINISH,BUS event
+    class STATS,REWARD,ACH,TOURNAMENT,SPECTATORS service
+    class QUEST,WALLET,CLAIM,COLLECTION,SHOP,SPIRIT reward
+    class NEXT outcome
 ```
 
 ---
