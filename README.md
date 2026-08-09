@@ -1,170 +1,234 @@
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=260&color=gradient&text=Long%20Tran&fontColor=ffffff&fontSize=52&fontAlignY=38&desc=Backend%20Engineer%20%7C%20Real-time%20%26%20Distributed%20Systems&descAlignY=58" alt="Long Tran — Backend Engineer" />
+<h1>Long Tran</h1>
+<h3>Backend Engineer · Real-time Systems · Distributed Architecture</h3>
 
-<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=22&duration=3500&pause=1800&center=true&vCenter=true&width=820&lines=Building+reliable+real-time+systems.;Designing+event-driven+backend+architectures.;Go+%C2%B7+Java+%C2%B7+Spring+Boot+%C2%B7+WebSockets+%C2%B7+Redis;Learning+by+shipping+production-minded+software." alt="Typing introduction" />
+<p>
+I build backend systems that stay correct under concurrency,<br />
+recover from failure, and remain understandable as they grow.
+</p>
 
-<br />
+<p>
+  <a href="https://longtmb2003.github.io"><img src="https://img.shields.io/badge/Portfolio-111827?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" /></a>
+  <a href="https://www.linkedin.com/in/long-tmb/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  <a href="https://github.com/longtmb2003"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+</p>
 
-<a href="https://longtmb2003.github.io">
-  <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
-</a>
-<a href="https://www.linkedin.com/in/long-tmb/">
-  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-</a>
-<a href="https://github.com/longtmb2003">
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub" />
-</a>
+<p>
+  <img src="https://img.shields.io/badge/Go-1.26-00ADD8?style=flat-square&logo=go&logoColor=white" alt="Go 1.26" />
+  <img src="https://img.shields.io/badge/Java-Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white" alt="Java and Spring Boot" />
+  <img src="https://img.shields.io/badge/WebSocket-Real--time-7C3AED?style=flat-square" alt="WebSocket realtime" />
+  <img src="https://img.shields.io/badge/PostgreSQL-Data-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+  <img src="https://img.shields.io/badge/Redis-Coordination-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis" />
+</p>
 
 </div>
 
 ---
 
-# 👋 Hi, I'm Long
+## 👋 About Me
 
-I'm a **backend engineer** based in **Ho Chi Minh City, Vietnam**, focused on **distributed systems**, **real-time services**, and **event-driven architecture**.
+I'm a backend engineer based in **Ho Chi Minh City, Vietnam**, focused on **distributed systems**, **real-time services**, and **event-driven architecture**. I enjoy designing explicit state ownership, clean service boundaries, durable data flows, and production safeguards—not just endpoints that work on the happy path.
 
-I enjoy problems where correctness under concurrency, reliability, and system boundaries matter: designing clean APIs, isolating domain logic, coordinating live state, and operating services under production-like conditions.
-
-My backend toolkit spans **Java / Spring Boot** and **Go**, with hands-on work across WebSockets, Kafka, gRPC, PostgreSQL, Redis, Docker, and CI/CD.
+My toolkit spans **Java / Spring Boot** and **Go**, with hands-on work across WebSockets, Kafka, gRPC, PostgreSQL, Redis, Docker, observability, and CI/CD.
 
 ---
 
-# 🎯 Current Focus
+## 🚀 Featured Project: GoCaro
 
-<table>
-<tr>
-<td valign="top" width="50%">
+<div align="center">
 
-**Building**
+<a href="https://gocaro.cyou">
+  <img width="100%" src="https://gocaro.cyou/thumbnail-og.jpg" alt="GoCaro — Real-time Multiplayer Gomoku" />
+</a>
 
-- GoCaro, a production-minded real-time game platform
-- Actor-style WebSocket services and event-driven workflows
-- Social, tournament, progression, and virtual-economy systems
+### A production-minded real-time multiplayer Gomoku platform
 
-</td>
-<td valign="top" width="50%">
+<p>
+  <a href="https://gocaro.cyou"><img src="https://img.shields.io/badge/PLAY_LIVE-gocaro.cyou-14B8A6?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Play GoCaro" /></a>
+  <a href="https://github.com/longtmb2003/GoCaro-Backend"><img src="https://img.shields.io/badge/BACKEND-Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="GoCaro Backend" /></a>
+  <a href="https://github.com/longtmb2003/GoCaro-Frontend"><img src="https://img.shields.io/badge/FRONTEND-Vue_3-42B883?style=for-the-badge&logo=vuedotjs&logoColor=white" alt="GoCaro Frontend" /></a>
+</p>
 
-**Going deeper on**
+</div>
 
-- Distributed systems and failure recovery
-- Clean / Hexagonal Architecture
-- Observability, abuse prevention, and cloud-native delivery
+GoCaro started as a two-player WebSocket demo and evolved into a complete multiplayer platform: instant guest play, ranked matchmaking, reconnect, spectators, tournaments, social features, chat, rewards, and collectible spirits—all backed by explicit concurrency and persistence rules.
 
-</td>
-</tr>
-</table>
-
----
-
-# 🚀 Featured Project — GoCaro
-
-## 🎮 Real-time Multiplayer Gomoku Platform
-
-GoCaro has grown from a two-player WebSocket demo into a full multiplayer platform. Players can enter anonymously, upgrade their account without losing progress, compete in casual or ranked matches, reconnect after a dropped connection, join tournaments, challenge friends, chat, and build a spirit collection.
-
-🌐 **Live:** [gocaro.cyou](https://gocaro.cyou)<br />
-📦 **Source:** [Go backend](https://github.com/longtmb2003/GoCaro-Backend) · [Vue frontend](https://github.com/longtmb2003/GoCaro-Frontend)
+| Realtime Core | Competition | Social Layer | Progression |
+| --- | --- | --- | --- |
+| Actor-owned matches | Casual + ranked queues | Redis presence | Elo ranks + streaks |
+| Reconnect + resync | Ready checks | Friends + challenges | Coins + daily quests |
+| Spectate + replay | Tournament brackets | Lobby + direct chat | Shop + spirit evolution |
 
 **Backend:** `Go 1.26` · `Gin` · `gorilla/websocket` · `PostgreSQL / pgx` · `Redis` · `JWT` · `Prometheus`<br />
 **Frontend:** `Vue 3` · `TypeScript` · `Pinia` · `Tailwind CSS 4` · `Vite 8`
 
-### 🏛️ System Architecture
+### Architecture at a Glance
 
 ```mermaid
 flowchart LR
-    PLAYER["Web / Mobile Browser"]
-    EDGE["Cloudflare Tunnel<br/>Caddy Reverse Proxy"]
+    USER["Browser"] --> EDGE["Cloudflare Tunnel<br/>Caddy"]
+    EDGE --> SPA["Vue 3 SPA"]
+    SPA -->|REST| HTTP["Gin Handlers"]
+    SPA <-->|WebSocket| WS["Realtime Gateways"]
 
-    subgraph CLIENT["Vue 3 SPA"]
-        UI["Pages · Components"]
-        STATE["Pinia Stores · Composables"]
-        SOCKET["REST + WebSocket Clients"]
-        UI --> STATE --> SOCKET
+    subgraph BACKEND["Go Backend"]
+        HTTP --> SVC["Application Services"]
+        WS --> MM["Matchmaker"]
+        MM --> RM["Room Manager"]
+        RM --> ROOM["Room Actor<br/>one goroutine per match"]
+        ROOM --> CORE["MatchCore<br/>pure game rules"]
+        ROOM --> BUS["Domain Event Bus"]
+        BUS --> SVC
     end
 
-    subgraph API["Go Backend"]
-        TRANSPORT["REST Handlers<br/>WebSocket Gateways"]
-        SERVICES["Application Services<br/>Auth · Social · Economy · Tournament"]
-        MATCHMAKER["Casual / Ranked Matchmaker<br/>Ready Check · Reservations"]
-        ROOMS["Room Manager<br/>One Actor per Match"]
-        CORE["MatchCore<br/>Rules · Turns · Win Detection"]
-        EVENTS["Domain Event Bus"]
-
-        TRANSPORT --> SERVICES
-        TRANSPORT --> MATCHMAKER
-        MATCHMAKER --> ROOMS --> CORE
-        ROOMS --> EVENTS --> SERVICES
-    end
-
-    POSTGRES[("PostgreSQL<br/>Durable State")]
-    REDIS[("Redis<br/>Presence · Pub/Sub · Job Locks")]
-    METRICS["Prometheus Metrics"]
-
-    PLAYER --> EDGE --> CLIENT
-    SOCKET -->|HTTPS / WSS| TRANSPORT
-    SERVICES --> POSTGRES
-    SERVICES --> REDIS
-    MATCHMAKER --> REDIS
-    API --> METRICS
+    SVC --> PG[("PostgreSQL")]
+    SVC --> REDIS[("Redis")]
+    MM --> REDIS
+    BACKEND --> OBS["Logs · Health · Prometheus"]
 ```
 
-The core match state is owned by a **single room goroutine**. Commands enter through channels, the isolated `MatchCore` applies game rules, and immutable domain events fan out to persistence and realtime protocol adapters. This keeps the domain independent from HTTP, WebSocket, and database concerns while avoiding shared-state races inside a match.
-
-### ⚡ Realtime & Competitive Play
-
-- Casual FIFO and ranked Elo matchmaking with a widening rating band
-- Match ready checks, abandonment penalties, turn clocks, draw offers, and resignations
-- Reconnect and full state resync after transient disconnects
-- Spectator mode, match history, replay, and shareable results
-- Private friend challenges and open invite-code matches
-- Single-elimination tournaments with brackets, round progression, walkovers, and recovery jobs
-
-### 🤝 Social & Progression
-
-- Anonymous play with an in-place upgrade to a permanent account
-- Redis-backed presence, live lobby events, friends, user search, and activity feeds
-- Lobby chat, direct messages, unread state, and retention cleanup
-- Coins, daily quests, achievements, rank tiers, streaks, and leaderboards
-- Shop, inventory, equipment, spirit collection, and spirit evolution
-
-### 🛡️ Production Engineering
-
-- PostgreSQL migrations and transactional persistence for matches, ratings, rewards, and tournament state
-- Redis pub/sub, distributed background-job locks, and multi-instance-aware presence
-- Per-IP and per-user rate limits plus optional Cloudflare Turnstile protection
-- Liveness/readiness probes, structured logging, Prometheus metrics, and graceful shutdown
-- Dockerized deployment behind Caddy and Cloudflare Tunnel
-- **400+ Go test functions** across unit, repository, handler, concurrency, and end-to-end suites; CI also runs race detection
+The important boundary is the **Room Actor**: one goroutine exclusively owns board state, clocks, disconnect state, and match lifecycle. Other components send commands through channels; they never mutate a live match directly.
 
 ---
 
-# 🛠 Tech Stack
+## 🔀 Highlighted System Flows
+
+### 1. Play Instantly, Keep the Same Identity
+
+Anonymous play is a first-class account state, not a disposable frontend session. Upgrading changes credentials on the same user record, so Elo, history, coins, quests, and inventory survive.
+
+```mermaid
+sequenceDiagram
+    actor Player
+    participant SPA as Vue SPA
+    participant Auth as Auth Service
+    participant Game as Game Platform
+    participant DB as PostgreSQL
+
+    Player->>SPA: Play Now
+    SPA->>Auth: POST /api/auth/anonymous
+    Auth->>DB: Create anonymous user
+    Auth-->>SPA: JWT + stable user ID
+    SPA->>Game: Queue and play as guest
+    Game->>DB: Persist Elo, history, coins, quests
+
+    Player->>SPA: Save My Account
+    SPA->>Auth: POST /api/auth/upgrade
+    Auth->>DB: Add username + password to same user ID
+    Auth-->>SPA: New JWT, all progress preserved
+```
+
+### 2. Match Lifecycle, Reconnect, and Durable Results
+
+The live path separates commands, domain rules, event delivery, and persistence. A transient network failure enters a grace window; a returning player receives a complete state snapshot before continuing.
+
+```mermaid
+flowchart LR
+    QUEUE["Casual / Ranked Queue"] --> READY{"Ready Check"}
+    READY -->|Both accept| MATCH["Matchmaker pairs players"]
+    READY -->|Timeout| PENALTY["Strike / temporary lockout"]
+    MATCH --> ROOM["Room Actor"]
+    ROOM --> CORE["MatchCore validates command"]
+    CORE --> EVENTS["Immutable domain events"]
+    EVENTS --> LIVE["WebSocket broadcast"]
+    EVENTS --> SAVE["Persist match · moves · Elo"]
+    SAVE --> HISTORY["History · Replay · Share"]
+
+    ROOM -->|Connection drops| GRACE["Reconnect grace window"]
+    GRACE -->|Player returns| RESYNC["Authenticate + full state resync"]
+    RESYNC --> ROOM
+    GRACE -->|Window expires| FORFEIT["Disconnect loss"]
+    ROOM -.-> SPECTATE["Spectator stream"]
+```
+
+### 3. Tournament Bracket from Registration to Champion
+
+Tournament matches reuse the real matchmaker and room engine. The bracket persists independently from live reservations, so recovery can reissue work after a restart or reconcile a dropped event.
+
+```mermaid
+flowchart TD
+    CREATE["Organizer creates tournament"] --> REGISTER["Players register"]
+    REGISTER --> FULL{"Field full?"}
+    FULL -->|No| REGISTER
+    FULL -->|Yes| SEAL["Seed and persist bracket"]
+    SEAL --> START["Start round"]
+    START --> RESERVE["Reserve each bracket pair"]
+    RESERVE --> ARRIVE{"Players arrive in grace period?"}
+    ARRIVE -->|Both| PLAY["Play in normal Room Actor"]
+    ARRIVE -->|One / none| WALKOVER["Resolve walkover"]
+    PLAY --> RESULT{"Match result"}
+    RESULT -->|Draw| REMATCH["Issue capped rematch"]
+    REMATCH --> RESERVE
+    RESULT -->|Winner| ADVANCE["Persist winner and advance bracket"]
+    WALKOVER --> ADVANCE
+    ADVANCE --> ROUND{"Final completed?"}
+    ROUND -->|No| START
+    ROUND -->|Yes| CHAMPION["Crown champion + notify players"]
+
+    RECOVERY["Restart recovery + periodic reconciler"] -.-> RESERVE
+    RECOVERY -.-> ADVANCE
+```
+
+### 4. One Match Event Powers the Progression Loop
+
+Match completion is published once. Ordered subscribers ensure stats are updated before rewards are calculated; other subscribers handle achievements, spectators, and tournament progression without adding those concerns to gameplay code.
+
+```mermaid
+flowchart LR
+    FINISH["MatchFinished event"] --> BUS["In-process Event Bus"]
+    BUS --> STATS["Stats Service<br/>Elo · W/L · streak"]
+    BUS --> REWARD["Reward Service<br/>coins · quest progress"]
+    BUS --> ACH["Achievement Evaluator<br/>unlock · item · coins"]
+    BUS --> TOURNAMENT["Tournament Progression<br/>advance bracket"]
+    BUS --> SPECTATORS["Spectator Hub<br/>final frame"]
+
+    REWARD --> QUEST["Daily quests"]
+    REWARD --> WALLET["Coin ledger"]
+    ACH --> COLLECTION["Collection rewards"]
+    WALLET --> SHOP["Shop + inventory"]
+    QUEST --> CLAIM["Player claims completed quest"]
+    CLAIM --> WALLET
+    COLLECTION --> SPIRIT["Equip / evolve spirit"]
+    SHOP --> SPIRIT
+    SPIRIT --> NEXT["Visible in the next match"]
+```
+
+---
+
+## 🧠 Engineering Highlights
+
+- **Explicit concurrency:** one goroutine owns each live match; no mutex protects board state.
+- **Failure recovery:** reconnect snapshots, graceful shutdown, tournament recovery, and periodic reconciliation.
+- **Durable workflows:** 27 versioned PostgreSQL migrations plus transactional match, rating, reward, and bracket writes.
+- **Distributed coordination:** Redis-backed cross-node presence, pub/sub, and background-job locks.
+- **Production safeguards:** per-IP/per-user limits, optional Turnstile, liveness/readiness probes, structured logs, and Prometheus metrics.
+- **Proven behavior:** 400+ Go test functions across domain, handlers, repositories, concurrency, and end-to-end flows; CI runs vet, lint, and the race detector.
+
+---
+
+## 🛠 Technology Stack
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=java,spring,go,kafka,grpc,maven,postgres,mysql,mongodb,redis,docker,kubernetes,nginx,cloudflare,githubactions,react,nextjs,vue,ts,tailwind,vite,git,github,linux" alt="Technology stack" />
 </p>
 
----
-
-# 🧱 What I Build
-
-- Reliable REST, gRPC, and WebSocket services
-- Concurrent systems with explicit state ownership and lifecycle management
-- Event-driven backends and asynchronous workflows
-- Data-intensive features backed by PostgreSQL and Redis
-- Observable, containerized deployments with CI/CD
-- Clean, testable systems with pragmatic architecture boundaries
+| Area | Tools |
+| --- | --- |
+| Backend | Go, Java, Spring Boot, Gin, REST, gRPC, WebSockets |
+| Data & Messaging | PostgreSQL, MySQL, MongoDB, Redis, Kafka |
+| Frontend | Vue 3, TypeScript, Pinia, Tailwind CSS, Vite |
+| Platform | Docker, Kubernetes, Caddy, Nginx, Cloudflare, GitHub Actions |
 
 ---
 
-# 🧠 Focus Areas
+## 🎯 What I'm Exploring
 
-`Distributed Systems` · `Real-time Backend` · `Event-Driven Architecture` · `Concurrency` · `Clean Architecture` · `Observability` · `Cloud Native`
+`Distributed Systems` · `Real-time Backend` · `Event-Driven Architecture` · `Concurrency` · `Failure Recovery` · `Observability` · `Cloud Native`
 
 ---
 
-# 📈 GitHub Activity
+## 📈 GitHub Activity
 
 <div align="center">
 
@@ -176,18 +240,10 @@ The core match state is owned by a **single room goroutine**. Commands enter thr
 
 <div align="center">
 
-### Thanks for stopping by — let's connect.
+### Let's build something reliable.
 
-<a href="https://longtmb2003.github.io">
-  <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
-</a>
-<a href="https://www.linkedin.com/in/long-tmb/">
-  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-</a>
-<a href="https://github.com/longtmb2003">
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub" />
-</a>
-
-<img width="100%" src="https://capsule-render.vercel.app/api?section=footer&type=waving&color=gradient" alt="Footer" />
+<a href="https://longtmb2003.github.io"><img src="https://img.shields.io/badge/Portfolio-111827?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" /></a>
+<a href="https://www.linkedin.com/in/long-tmb/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+<a href="https://github.com/longtmb2003"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
 
 </div>
