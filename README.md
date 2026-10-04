@@ -1,11 +1,11 @@
 <div align="center">
 
 # Hi there, I'm Long Tran 👋
-### Backend Engineer · Software Engineer
+### Backend Java Developer
 
 <p>
-  I design and build resilient microservices, high-throughput event pipelines,<br />
-  and scalable backend systems that stay correct under concurrency.
+  I build production Spring Boot microservices for large-scale government platforms:<br />
+  authentication and security, event-driven integrations with Kafka and gRPC, and Oracle performance tuning.
 </p>
 
 <p>
@@ -17,9 +17,9 @@
 <p>
   <img src="https://img.shields.io/badge/Java-17%20%2F%2021-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java" />
   <img src="https://img.shields.io/badge/Spring%20Boot-3.x-6DB33F?style=flat-square&logo=springboot&logoColor=white" alt="Spring Boot" />
-  <img src="https://img.shields.io/badge/Go-1.2x-00ADD8?style=flat-square&logo=go&logoColor=white" alt="Go" />
   <img src="https://img.shields.io/badge/Apache%20Kafka-Event--Driven-231F20?style=flat-square&logo=apachekafka&logoColor=white" alt="Kafka" />
-  <img src="https://img.shields.io/badge/PostgreSQL-Data-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+  <img src="https://img.shields.io/badge/gRPC-Service%20Contracts-244C5A?style=flat-square&logo=google&logoColor=white" alt="gRPC" />
+  <img src="https://img.shields.io/badge/Oracle-Performance%20Tuning-F80000?style=flat-square&logo=oracle&logoColor=white" alt="Oracle" />
   <img src="https://img.shields.io/badge/Redis-Cache%20%26%20Locks-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis" />
 </p>
 
@@ -29,43 +29,56 @@
 
 ### 👨‍💻 About Me
 
-- 🔭 **Focus:** Scalable backend architectures, distributed services, event-driven pipelines, and transactional integrity.
-- 💼 **Primary Stack:** **Java / Spring Boot** and **Go**, working with **Kafka**, **gRPC**, **PostgreSQL**, **Oracle DB**, **Redis**, and **Elasticsearch**.
-- ⚙️ **Practices:** Clean domain boundaries, explicit concurrency control, schema versioning (Flyway), automated testing, and containerized deployments on Docker/Kubernetes.
+- 💼 **Now:** Backend Java Developer at **GTEL OTS** (intern from Sep 2024, full-time since Jan 2025), working on public-safety, notification and smart-camera platforms.
+- 🔭 **Focus:** Backend APIs, Oracle performance tuning, authentication and security, and event-driven integrations with Kafka and gRPC.
+- ⚙️ **How I work:** I own features from schema design (Flyway) to deployment on Kubernetes, and I debug production issues down to the execution plan.
 - 📍 **Location:** Ho Chi Minh City, Vietnam.
 
 ---
 
-### 🛠️ Tech Stack & Tooling
+### 🏆 Highlights
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=java,spring,go,kafka,postgres,mysql,mongodb,redis,docker,kubernetes,linux,git,gitlab,postman,maven,gradle" alt="Tech Stack Icons" />
-</p>
-
-| Category | Technologies & Tools |
+| | |
 | :--- | :--- |
-| **Languages** | Java (17/21), Go, SQL (Advanced), C#, TypeScript |
-| **Backend & Frameworks** | Spring Boot 3.x (MVC, Data JPA, Security, Cloud, AOP), Gin, gRPC, RESTful APIs, WebSockets |
-| **Messaging & Distributed** | Apache Kafka, Redis (Distributed Caching, Pub/Sub, Distributed Locking), Event-Driven Architecture |
-| **Databases & Storage** | PostgreSQL, Oracle Database, MySQL, MongoDB, Elasticsearch, MinIO, Flyway |
-| **DevOps & Platforms** | Docker, Kubernetes, OpenShift, Rancher, GitLab CI/CD, GitHub Actions, Linux, Nginx |
-| **Testing & Quality** | JUnit 5, Mockito, Testcontainers, SonarQube, Postman, JMeter |
+| ⚡ **~120s → ~0.4s** | Cut organisation-tree user loading by tracing Oracle execution plans and replacing a hard-coded organisation-code filter with an indexed organisation ID. |
+| 🔄 **1M+ records** | Helped re-platform a live .NET system to Spring Boot microservices, migrating data with live sync. |
+| 📨 **gRPC → Kafka** | Designed an incident-event pipeline linking the command, support and field systems. |
+| 🔐 **OTP & access policies** | AES-GCM-encrypted OTP codes, lockout and resend throttling, plus per-group access policies and session timeouts enforced over gRPC. |
+| 💾 **Backup & restore** | Across Oracle, Elasticsearch and MinIO with Kafka batch jobs, Redis locking and encrypted archives; fixed duplicate recipients on restore. |
+| 🧩 **10+ services / 120+ migrations** | Maintained shared gRPC/Feign contracts used by 10+ services and authored 120+ Flyway migrations. |
 
 ---
 
-### 💡 Core Engineering Competencies
+### 🛠️ Tech Stack
 
-- **⚡ High Concurrency & Distributed Systems**  
-  Designing thread-safe workflows, distributed locking with Redis, resilient background jobs, and graceful failure recovery under load.
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=java,spring,kafka,redis,mongodb,postgres,mysql,elasticsearch,docker,kubernetes,gitlab,git,gradle,maven,go,vue" alt="Tech Stack Icons" />
+</p>
 
-- **📨 Event-Driven & Asynchronous Processing**  
-  Decoupling service dependencies using Apache Kafka event pipelines, batch message processing, and idempotent consumer patterns.
+| Category | Technologies |
+| :--- | :--- |
+| **Java & Spring** | Java 17/21, Spring Boot 3.x, Spring Data JPA, Spring Security, Spring AOP, OpenFeign, MapStruct |
+| **Data & Messaging** | Oracle, MySQL, MongoDB, PostgreSQL, Redis, Elasticsearch, MinIO, Flyway, Kafka, gRPC, REST |
+| **Security** | JWT, OAuth2/SSO, OTP, AES-GCM, RBAC with data scoping |
+| **Testing & Docs** | JUnit 5, AssertJ, Spock, OpenAPI/Swagger |
+| **DevOps** | Git, GitLab CI/CD, Docker, Kubernetes, Rancher, OpenShift, Gradle, Maven |
+| **Other** | React/TypeScript (UI fixes), Go and Vue 3 (personal projects), C# |
 
-- **🗄️ Database Architecture & Performance Tuning**  
-  Schema modeling, indexing strategies, handling multi-database environments (RDBMS + NoSQL + Search engine), and versioned Flyway migrations.
+---
 
-- **🛡️ API Security & Governance**  
-  Building centralized ACL/RBAC systems, real-time token/session revocation, rate limiting, and encrypted payload handling.
+### 🎮 Personal Project: GoCaro
+
+<a href="https://gocaro.cyou">
+  <img src="https://img.shields.io/badge/PLAY_LIVE-gocaro.cyou-14B8A6?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Play GoCaro" />
+</a>
+<a href="https://github.com/longtmb2003/GoCaro-Backend">
+  <img src="https://img.shields.io/badge/BACKEND-Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="GoCaro Backend" />
+</a>
+<a href="https://github.com/longtmb2003/GoCaro-Frontend">
+  <img src="https://img.shields.io/badge/FRONTEND-Vue_3-42B883?style=for-the-badge&logo=vuedotjs&logoColor=white" alt="GoCaro Frontend" />
+</a>
+
+A real-time multiplayer Gomoku platform built with Go and Vue 3 over WebSockets. Each live match is owned by a single room goroutine, so board state and clocks are never mutated from outside.
 
 ---
 
